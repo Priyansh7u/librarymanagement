@@ -1,0 +1,101 @@
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.book-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-light);
+}
+
+.book-cover {
+  height: 130px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+.book-cover::before {
+  content: '📖';
+  position: absolute;
+  top: 10px; right: 12px;
+  font-size: 2rem;
+  opacity: .25;
+}
+.book-cover-title {
+  font-family: var(--font-display);
+  font-size: .85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.95);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.book-cover-author {
+  font-size: .72rem;
+  color: rgba(255,255,255,.7);
+  margin-top: 2px;
+}
+
+.book-info { padding: 12px 14px; }
+.book-title {
+  font-size: .87rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.book-author { font-size: .78rem; color: var(--text-muted); margin-bottom: 8px; }
+.book-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.book-actions { display: flex; gap: 6px; }
+
+/* Color Picker */
+.color-picker { display: flex; gap: 8px; flex-wrap: wrap; }
+.color-dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .15s, border-color .15s;
+}
+.color-dot:hover { transform: scale(1.15); }
+.color-dot.selected { border-color: var(--gold-light); transform: scale(1.15); box-shadow: 0 0 0 2px rgba(201,168,76,.3); }
+
+/* Detail view */
+.book-detail-cover {
+  height: 100px;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.detail-grid { display: flex; flex-direction: column; gap: 10px; }
+.detail-row { display: flex; gap: 12px; align-items: baseline; }
+.detail-label {
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  min-width: 70px;
+}
+.detail-value { font-size: .87rem; color: var(--text-secondary); }

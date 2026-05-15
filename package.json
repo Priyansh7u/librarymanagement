@@ -1,0 +1,13 @@
+{
+  "name": "grantha-library-management",
+  "version": "1.0.0",
+  "description": "Grantha — Full Stack Library Management System",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run build && npm run preview"
+  },
+  "private": true
+}

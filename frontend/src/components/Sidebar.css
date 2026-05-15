@@ -1,0 +1,105 @@
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px 20px;
+}
+.brand-icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 8px rgba(201,168,76,.3));
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.brand-sub {
+  font-size: .7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-top: 2px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 16px;
+}
+
+.sidebar-nav {
+  padding: 16px 10px;
+  flex: 1;
+}
+.nav-section-label {
+  font-size: .68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--text-dim);
+  padding: 0 10px;
+  margin-bottom: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: .88rem;
+  font-weight: 400;
+  transition: all .18s;
+  margin-bottom: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.nav-item:hover {
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+}
+.nav-item.active {
+  background: rgba(201,168,76,.1);
+  color: var(--gold-light);
+  font-weight: 500;
+}
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 2px;
+  background: var(--gold);
+  border-radius: 0 2px 2px 0;
+}
+.nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+.nav-label { flex: 1; }
+
+.sidebar-footer {
+  padding-bottom: 16px;
+}
+.sidebar-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px 0;
+  font-size: .75rem;
+  color: var(--text-muted);
+}
+.dot { width: 6px; height: 6px; border-radius: 50%; }
+.dot-green { background: #4A7C59; box-shadow: 0 0 6px #4A7C59; }
