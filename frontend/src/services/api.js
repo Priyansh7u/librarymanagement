@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://librarymanagement-2-w0mv.onrender.com',
+  baseURL: 'https://librarymanagement-2-w0mv.onrender.com/api',
   timeout: 10000,
   headers: { 'Content-Type': 'application/json' }
 });
