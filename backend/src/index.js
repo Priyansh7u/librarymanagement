@@ -8,6 +8,10 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully");
+});
+
 // ─── In-Memory Database ───────────────────────────────────────────────────────
 let books = [
   { id: uuidv4(), title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', genre: 'Classic Fiction', isbn: '978-0743273565', year: 1925, copies: 3, available: 3, description: 'A story of the fabulously wealthy Jay Gatsby and his love for Daisy Buchanan.', coverColor: '#2D6A4F' },
