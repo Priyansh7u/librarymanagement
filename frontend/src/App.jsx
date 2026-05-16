@@ -10,15 +10,43 @@ import Transactions from './pages/Transactions';
 export default function App() {
 
   useEffect(() => {
-    const handleContextMenu = (e) => {
+
+    // Disable Right Click
+    const disableContextMenu = (e) => {
       e.preventDefault();
     };
 
-    document.addEventListener('contextmenu', handleContextMenu);
+    // Disable Inspect / DevTools shortcuts
+    const disableDevTools = (e) => {
+
+      // F12
+      if (e.key === 'F12') {
+        e.preventDefault();
+      }
+
+      // Ctrl+Shift+I / J / C
+      if (
+        e.ctrlKey &&
+        e.shiftKey &&
+        ['I', 'J', 'C'].includes(e.key)
+      ) {
+        e.preventDefault();
+      }
+
+      // Ctrl+U
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableContextMenu);
+    document.addEventListener('keydown', disableDevTools);
 
     return () => {
-      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('contextmenu', disableContextMenu);
+      document.removeEventListener('keydown', disableDevTools);
     };
+
   }, []);
 
   return (
